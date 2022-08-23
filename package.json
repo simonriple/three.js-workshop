@@ -1,0 +1,23 @@
+{
+  "name": "three.js-workshop",
+  "version": "1.0.0",
+  "description": "Take your web project to the next dimension",
+  "main": "script.js",
+  "scripts": {
+    "start": "parcel index.html --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonriple/three.js-workshop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simonriple/three.js-workshop/issues"
+  },
+  "homepage": "https://github.com/simonriple/three.js-workshop#readme",
+  "dependencies": {
+    "parcel": "^2.7.0",
+    "three": "^0.126.0"
+  }
+}
