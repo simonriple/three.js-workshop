@@ -49,8 +49,16 @@ const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
 
 
+var clock = new THREE.Clock();
+
 //Action / Animation
 function tick() {
+
+    const elapsedTime = clock.getElapsedTime()
+    //Animation
+    mesh.rotation.y += .01
+    mesh.position.y = Math.sin(elapsedTime)
+
     requestAnimationFrame(tick);
     control.update();
     renderer.render(scene, camera);
