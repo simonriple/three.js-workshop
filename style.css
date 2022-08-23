@@ -1,0 +1,53 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body
+{
+    height: 100vh;
+    font-family: system-ui;
+    background-color: #A0A98C;
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    outline: none;
+}
+
+div
+{
+    padding-left: 10vw;
+    padding-top:30vh;
+    z-index:1
+}
+
+h1 {
+    font-size: 4rem;
+    color:white
+}
+
+p {
+    font-size: 1.5rem;
+    color:white
+}
+
+button {
+    background-color: transparent;
+    color:white;
+    margin-top:1em;
+    border: solid 1px;
+    border-color:white;
+    border-radius: 5px;
+    padding:.5em 1em
+}
+
+button:hover {
+    background-color: white;
+    color:#A0A98C
+}
