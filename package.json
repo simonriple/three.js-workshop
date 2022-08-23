@@ -4,7 +4,7 @@
   "description": "Take your web project to the next dimension",
   "main": "script.js",
   "scripts": {
-    "start": "parcel index.html --open"
+    "start": "parcel index.html assets/** --open"
   },
   "repository": {
     "type": "git",
