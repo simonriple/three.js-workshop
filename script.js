@@ -127,6 +127,15 @@ scene.add(landscapeMesh);
 
 var clock = new THREE.Clock();
 
+let mouseY = 0;
+
+document.addEventListener('mousemove',growTerrain)
+
+function growTerrain(e) {
+    mouseY = e.clientY
+}
+
+
 //Action / Animation
 function animationLoop() {
     
@@ -137,6 +146,7 @@ function animationLoop() {
     
     //Animate plane
     // planeMaterial.uniforms.time.value = elapsedTime;
+    landscapeMaterial.displacementScale = 0.5 - mouseY*0.0002
     renderer.render(scene, camera);
     
     control.update();
