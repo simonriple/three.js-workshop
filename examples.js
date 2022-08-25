@@ -1,9 +1,13 @@
 import * as THREE from 'three'
-import { TeapotGeometry } from './teapot'
-import { VTKLoader } from 'three/examples/jsm/loaders/VTKLoader.js';
+import {
+	BufferAttribute,
+	BufferGeometry,
+	Matrix4,
+	Vector3,
+	Vector4
+} from 'three';
 
 const material = new THREE.MeshPhongMaterial({
-    wireframe:true,
     color:'green',
     transparent:true
 })
@@ -11,24 +15,9 @@ const material = new THREE.MeshPhongMaterial({
 const addUtahTeapot = ( scene) => {
     const teapotGeomery = new TeapotGeometry(0.2)
     const teapot = new THREE.Mesh(teapotGeomery,material)
-teapot.position.set(-0.5,-0.4,0)
+teapot.position.set(0,0,0)
 scene.add(teapot)
 }
-
-const addStandfordBunny = (scene) => {
-    const vktloader = new VTKLoader();
-    vktloader.load( 'https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/models/vtk/bunny.vtk', function ( geometry ) {
-    
-        geometry.center();
-        geometry.computeVertexNormals();
-        const mesh = new THREE.Mesh( geometry, material );
-        mesh.position.set( 0.5, 0, 0 );
-        mesh.scale.multiplyScalar( 8 );
-        scene.add( mesh );
-    } );
-}
-
-
 
 /**
  * Tessellates the famous Utah teapot database by Martin Newell into triangles.
