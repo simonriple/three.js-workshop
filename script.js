@@ -1,14 +1,7 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
-
-//Canvas
-const canvas = document.querySelector('canvas.webgl')
-
-
-//Scene 
-const scene = new THREE.Scene();
-
+//Sizes
 const sizes = {
     width: window.innerWidth * 0.7,
     height: window.innerHeight
@@ -19,18 +12,33 @@ window.addEventListener('resize', () =>
     // Update sizes
     sizes.width = window.innerWidth*0.7
     sizes.height = window.innerHeight
-
+    
     // Update camera
     camera.aspect = sizes.width / sizes.height
     camera.updateProjectionMatrix()
-
+    
     // Update renderer
     renderer.setSize(sizes.width, sizes.height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 })
 
+//Canvas
+const canvas = document.querySelector('canvas.webgl')
+
+//Scene 
+const scene = new THREE.Scene();
+
+//Renderer
+const renderer = new THREE.WebGLRenderer({
+    canvas: canvas,
+    antialias: true,
+    alpha: true
+});
+renderer.setSize(sizes.width, sizes.height);
+
 //Camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height);
+// const camera = new THREE.OrthographicCamera()
 camera.position.x = 0;
 camera.position.y = 1;
 camera.position.z = 3;
@@ -44,16 +52,6 @@ control.autoRotateSpeed = .5;
 //Light
 const light = new THREE.AmbientLight();
 scene.add(light);
-
-
-//Renderer
-const renderer = new THREE.WebGLRenderer({
-    canvas: canvas,
-    alpha: true
-});
-renderer.setSize(sizes.width, sizes.height);
-
-
 
 //Load texture
 const loader = new THREE.TextureLoader();
@@ -130,19 +128,18 @@ scene.add(landscapeMesh);
 var clock = new THREE.Clock();
 
 //Action / Animation
-function tick() {
-
+function animationLoop() {
+    
     const elapsedTime = clock.getElapsedTime();
     //Animation
     // mesh.rotation.y += .01;
     // mesh.position.y = Math.sin(elapsedTime);
-
+    
     //Animate plane
     // planeMaterial.uniforms.time.value = elapsedTime;
+    renderer.render(scene, camera);
     
     control.update();
-    renderer.render(scene, camera);
-    requestAnimationFrame(tick);
 };
 
-tick();
+renderer.setAnimationLoop(animationLoop)
