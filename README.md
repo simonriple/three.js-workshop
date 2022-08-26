@@ -31,7 +31,7 @@ En av de store fordelene med å bruke Three.js er at vi slipper unna mye avanser
 -	Rommet til alt som skal bli rendret av ThreeJS
 o	Default plassering er I “origo” (0,0,0)
 -	Her skal: lys og objekter være.
-Renderer – Simon
+# Renderer
 -	Kobling mellom scene og canvas
 Renderer kobler scenen din til canvas elementet.
 -	WebGLRenderer 
