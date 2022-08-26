@@ -1,39 +1,74 @@
 const slides = [
     {title: 'Take your project to the next dimension',points: []},
     {title: 'WebGL', points: [
-        'Javascript API for rendering graphics', 
-        'GPU proseccing', 
-        "Canvas"
+        'Javascript API for grafikk rendering', 
+        'Hardware akselerert', 
+        "WebGL vs OpenGL"
     ]},
     {title: 'Three.js', points: [
         "Abstraksjon av WebGL",
-        "Reduser boilerplate",
+        "Reduserer boilerplate",
         "Mindre matte"
     ]},
     {title: 'Scene', points: [
-        'Dette er en beskrivelse',
-        'ble'
+        'Rommet',
     ]},
-    {title: 'Renderer', points: ['Viser scenen','Kobler WebGL, Scene og Canvas']},
-    {title: 'Camera', points: ['Brukerens point of view','Perspective camera', '     Near', '     Far', '     Fov', '     Aspect', 'OrthographicCamera', 'OrbitControls']},
-    {title: 'Light', points: ['Dette er en beskrivelse','Ambient, Direction, Point']},
+    {title: 'Renderer', points: [
+        'Kobler scene og canvas',
+        'WebGLRenderer'
+    ]},
+    {title: 'Camera', points: [
+        'Brukerens point of view',
+        'Perspective camera', 
+        '     Near', 
+        '     Far', 
+        '     Fov', 
+        '     Aspect', 
+        'OrthographicCamera', 
+        'OrbitControls'
+    ]},
+    {title: 'Light', points: [
+        'ThreeJS.Light',
+        'Farge og intensitet',
+        'Ambient, Direction, Point, Spot']
+    },
     {title: 'Object', points: [
         'Geometry',
         'Material'
     ]},
     {title: 'Geometry', points: [
-        'The shape of an object',
-        'Consists of vertexes',
+        'Formen',
+        'Består av vertexer',
         'Box, Sphere, Plane, Torus, Cone'
     ]},
     {title: 'Material', points: [
-        'The "skin" of an object',
-        'Color, shade, texture, reflection',
-        'MeshStandardMaterial, MeshPhongMaterial, MeshDepthMaterial, MeshNormalMaterial'
+        'Huden',
+        'Farge, Texture, Refleksjon, Skygge',
+        'MeshStandardMaterial',
+        'MeshPhongMaterial',
+        'MeshDepthMaterial', 
+        'MeshNormalMaterial'
     ]},
-    {title: 'Action', points: ['AnimationLoop',]},
-    {title: 'Shader', points: ['GLSL','Fragment shader', 'Vertex shader', 'Uniform, Varying, attribute']},
-    {title: 'HeightMap', points: ['HeightMap']},
+    {title: 'Animasjon', points: [
+        'AnimationLoop', 
+        'Endre egenskaper for objekter',
+        'Flytte', 
+        'Rotere'
+    ]},
+    {title: 'Shader', points: [
+        'GLSL',
+        'Fragment shader', 
+        'Vertex shader', 
+        'Uniform, Varying, Attribute'
+    ]},
+    {title: 'Map', points: [
+        'DisplacementMap', 
+        'AlphaMap', 
+        'Interaktiv mus', 
+        'Tekst', 
+        'Window resize'
+    ]},
+    {title: 'Inspo', points: []}
 ]
 
 const addPoints = (index, container) => {
